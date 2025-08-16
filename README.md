@@ -1,103 +1,102 @@
-# Dream-analyzer
+# DreamRoast – AI Dream Interpreter & Roaster
 
-DreamRoast
+## 📌 Project Overview
 
-Tell the AI your dream.
-It listens, analyzes, and roasts your subconscious — brutally. Then it throws in insights so you don’t walk away completely confused.
+**DreamRoast** is a fun yet insightful AI app that lets users share their dreams and receive either:
 
-Project Idea
+* A sarcastic **roast** of their subconscious,
+* A structured **psychological-style analysis**, or
+* A mix of both.
 
-DreamRoast is a fun yet insightful AI app where you:
+It’s not just for laughs — the project also demonstrates **Prompting, Structured Output, API Handling, and Fun UX** in a single interactive application.
 
-Share your dream in text form.
+---
 
-Choose a mode: Roast, Analysis, or Both.
+## 🎯 How It Works
 
-AI processes your dream and delivers:
+### 1. User Input
 
-A sarcastic, witty roast of your dream.
+* User types in a **dream description**.
+* Selects a **mode**:
 
-A structured psychological-style analysis.
+  * **Roast** → witty & sarcastic
+  * **Analysis** → symbolic & thoughtful
+  * **Both** → mix of roast + insights
 
-Or a combination of both.
+### 2. Backend Processing
 
-This project isn’t just for laughs — it’s a practical showcase of combining Prompting, Structured Output, API Handling, and Fun UX into a single interactive application.
+* AI interprets the dream.
+* Applies the chosen mode’s tone:
 
-How It Works
-1. User Input
+  * Roast = sarcasm, wit
+  * Analysis = logic, symbolism
+  * Both = roast + analysis
 
-A dream description (typed in by the user).
+### 3. Roast / Analysis Generation
 
-A mode selection: Roast, Analysis, or Both.
+* Uses **custom prompting** to guide AI responses.
+* Returns results in **JSON format** for clean UI rendering.
 
-2. Backend Processing
+### 4. Output Display
 
-The AI interprets the dream.
+* **Roast Report** → sarcastic interpretation.
+* **Analysis Report** → structured insights.
+* **Combined Report** → both sections shown together.
 
-It applies sarcasm for roast mode, logic and symbolism for analysis mode, or mixes both.
+---
 
-3. Roast / Analysis Generation
+## 🧠 AI Concepts in This Project
 
-Prompting and structured outputs ensure results are both funny and clear.
+### 🔹 Prompting
 
-Backend handles formatting and JSON parsing for consistent UI rendering.
+* Mode-specific instructions:
 
-4. Output
+  * Roast → “Be witty and sarcastic.”
+  * Analysis → “Interpret with symbolism.”
+  * Both → “Mix sarcasm with meaningful insights.”
 
-Displayed in the UI as Roast Report and/or Analysis Report.
+### 🔹 Structured Output
 
-AI Concepts in This Project
-1. Prompting
+* AI returns results in JSON for consistency.
 
-We craft prompts that adapt to the chosen mode.
-Instead of simply “analyze this dream,” we guide the AI with tone instructions, e.g.:
+**Example JSON Response:**
 
-If mode = roast: Be witty and sarcastic.  
-If mode = analysis: Be thoughtful, interpret symbols.  
-If mode = both: Mix roast with insight.  
-
-2. Structured Output
-
-The AI returns JSON so the frontend knows how to render each section.
-
-Example:
-
+```json
 {
   "roast": "Your dream about flying? Yeah, even gravity doesn’t want you.",
   "analysis": "Dreams of flying often represent ambition and desire for freedom."
 }
+```
 
-3. Function Calling
+### 🔹 Function Calling
 
-Different backend functions handle different user needs:
+Backend functions ensure separation of logic:
 
-generateRoast() – Produces only roast output.
+* `generateRoast()` → Roast only
+* `generateAnalysis()` → Analysis only
+* `generateBoth()` → Roast + Analysis
 
-generateAnalysis() – Produces structured analysis.
+### 🔹 Error Handling & Parsing
 
-generateBoth() – Combines roast + analysis.
+* **JSON parsing with fallbacks**
+* **Retry logic** for malformed outputs
 
-This allows flexibility and cleaner API design.
+---
 
-4. Error Handling & Parsing
+## ⚙️ Tech Stack
 
-Since LLM outputs can be messy, the app includes:
+* **Frontend:** React + Tailwind CSS
+* **Backend:** Node.js + Express
+* **AI API:** Google Gemini / OpenAI API
+* **Hosting:**
 
-JSON parsing + fallback handling.
+  * Frontend → Vercel / Netlify
+  * Backend → Render / Railway
 
-Retry logic for malformed outputs.
+---
 
-Tech Stack
+## ⚠️ Disclaimer
 
-Frontend: React + Tailwind
+DreamRoast is for **fun + insights** only.
+Don’t take the roast personally — it’s just your subconscious clowning around.
 
-Backend: Node.js + Express
-
-AI: Google Gemini / OpenAI API
-
-Hosting: Vercel / Netlify (frontend), Render / Railway (backend)
-
-Disclaimer
-
-We roast with care.
-Don’t take it too seriously — it’s just your subconscious clowning around.
