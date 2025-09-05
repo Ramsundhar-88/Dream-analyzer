@@ -22,6 +22,7 @@ It’s not just for laughs — the project also demonstrates **Prompting, Struct
   * **Roast** → witty & sarcastic
   * **Analysis** → symbolic & thoughtful
   * **Both** → mix of roast + insights
+  * with two levels
 
 ### 2. Backend Processing
 
